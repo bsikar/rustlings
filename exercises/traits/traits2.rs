@@ -10,13 +10,19 @@
 // No boiler plate code this time,
 // you can do this!
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 //TODO: Add your code here
+impl AppendBar for Vec<String> {
+    fn append_bar(self) -> Self {
+        // I could do `mut self`, but this can be done to not do that
+        let mut x = self;
+        x.push("Bar".to_owned());
+        x
+    }
+}
 
 #[cfg(test)]
 mod tests {
